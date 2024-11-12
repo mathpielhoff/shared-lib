@@ -1,9 +1,16 @@
 from jose import JWTError, jwt
-from shared_lib.LoginResponse import LoginResponse
+from shared_lib.models.LoginResponse import LoginResponse
 from config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 from fastapi import HTTPException, status
+from datetime import datetime, timedelta
+from typing import Optional
 
 
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 def decode_jwt(token: str) -> LoginResponse:
     try:
