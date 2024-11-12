@@ -1,5 +1,5 @@
 from jose import JWTError, jwt
-from model.LoginResponse import LoginResponse
+from shared_lib.LoginResponse import LoginResponse
 from config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 from fastapi import HTTPException, status
 
