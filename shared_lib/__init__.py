@@ -1,2 +1,3 @@
 from .config import Config
-from model.LoginResponse import LoginResponse
+from .utils import decode_jwt
+from .model.LoginResponse import LoginResponse
