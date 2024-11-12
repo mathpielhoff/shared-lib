@@ -1,3 +1,2 @@
-from .config import Config
-from .utils import create_access_token, decode_jwt
+from .utils import create_access_token, decode_jwt, config
 from .models.LoginResponse import LoginResponse
