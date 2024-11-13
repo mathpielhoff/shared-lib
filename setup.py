@@ -8,5 +8,8 @@ setup(
     packages=find_packages(include=["shared_lib", "shared_lib.*"]),
     install_requires=[
         "python-dotenv>=0.21.0",
+        "pytest",
+        "fastapi",
+        "python-jose"
     ],
 )
