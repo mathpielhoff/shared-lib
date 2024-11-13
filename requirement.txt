@@ -2,3 +2,5 @@ python-dotenv
 pytest
 fastapi
 python-jose
+sqlalchemy
+psycopg2-binary 

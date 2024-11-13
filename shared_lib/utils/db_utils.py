@@ -28,8 +28,7 @@ def get_db():
         db.close()
 
 def init_db():
-    """
-    Fonction d'initialisation de la base de données.
-    Appelle `Base.metadata.create_all` pour créer les tables définies.
-    """
-    Base.metadata.create_all(bind=engine)
+    try:
+        Base.metadata.create_all(bind=engine)
+    except Exception as e:
+        print(f"Erreur lors de la création des tables : {e}")
